@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/normal_margin"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:id="@+id/media_format_chooser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    style="?android:attr/titleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@android:color/black"
+                    android:text="@string/video_encode_config_avc" />
+
+            <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                    android:id="@+id/video_codec"
+                    android:name="인코더"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
+
+            <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                    android:id="@+id/resolution"
+                    android:name="해상도"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:entries="@array/video_resolutions" />
+
+            <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                    android:id="@+id/video_bitrate"
+                    android:name="비트레이트 (kbps)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:entries="@array/video_bitrates" />
+
+            <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                    android:id="@+id/framerate"
+                    android:name="프레임레이트 (fps)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:entries="@array/video_framerates" />
+
+            <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                    android:id="@+id/iframe_interval"
+                    android:name="I-프레임"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="8dp"
+                    android:entries="@array/iframeintervals" />
+
+            <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                    android:id="@+id/avc_profile"
+                    android:name="압축기술"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
+
+            <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                    android:id="@+id/orientation"
+                    android:name="방향"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:entries="@array/orientations" />
+
+            <LinearLayout
+                    android:id="@+id/audio_format_chooser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        style="?android:attr/titleTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:textColor="@android:color/black"
+                        android:text="@string/audio_encode_config_aav" />
+
+                <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                        android:id="@+id/audio_codec"
+                        android:name="인코더"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+
+                <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                        android:id="@+id/audio_channel_count"
+                        android:name="채널"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:entries="@array/audio_channels" />
+
+                <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                        android:id="@+id/sample_rate"
+                        android:name="샘플링 레이트 (HZ)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+
+                <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                        android:id="@+id/audio_bitrate"
+                        android:name="비트레이트 (kbps)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+
+                <com.sungbin.fake.nusty.tynus.view.widget.NamedSpinner
+                        android:id="@+id/aac_profile"
+                        android:name="압축기술"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ToggleButton
+            android:id="@+id/with_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/record_button"
+            android:layout_alignParentEnd="true"
+            android:checked="true"
+            android:textOn="@string/recode_audio"
+            android:textOff="@string/recode_audio"/>
+
+    <Button
+            android:id="@+id/record_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/start_screen_recode" />
+
+</RelativeLayout>

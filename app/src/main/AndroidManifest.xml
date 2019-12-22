@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.sungbin.fake.nusty.tynus">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:usesCleartextTraffic="true"
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+        <activity
+                android:name=".view.activity.MainActivity"
+                android:label="@string/app_name"
+                android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".recorder.activity.RecodeActivity"
+                android:label="@string/screen_recode"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".sinch.LoginActivity"/>
+
+        <activity android:name=".sinch.CallScreenActivity"/>
+
+        <activity android:name=".sinch.IncomingCallScreenActivity" android:screenOrientation="portrait"
+                android:noHistory="true"/>
+
+        <activity android:name=".sinch.PlaceCallActivity" android:screenOrientation="portrait"/>
+
+        <meta-data
+                android:name="com.samsung.android.icon_container.has_icon_container"
+                android:value="true"/>
+
+        <service android:name=".sinch.SinchService" />
+
+        <service android:name=".service.FloatingWindowService"
+                android:permission="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+        <service android:name=".service.MusicService"/>
+
+        <service android:name=".service.StepCountingService" />
+
+        <receiver android:name=".receiver.FloatingWindowServiceStopReceiver"
+                android:exported="true">
+        </receiver>
+
+        <receiver android:name=".receiver.MediaControlReceiver"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="action"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.AlarmReceiver"
+                android:exported="true">
+        </receiver>
+
+        <receiver android:name=".receiver.DeviceBootReceiver"
+                android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

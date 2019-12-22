@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      tools:context="com.sungbin.fake.nusty.tynus.view.activity.MainActivity"
+      tools:ignore="AppCompatResource">
+
+    <item
+        android:id="@+id/showFloating"
+        android:title=""
+        app:showAsAction="always"/>
+
+</menu>
