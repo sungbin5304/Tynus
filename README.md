@@ -1,0 +1,2 @@
+# Tynus
+A.I. App?
